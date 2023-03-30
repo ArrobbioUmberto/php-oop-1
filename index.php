@@ -29,7 +29,7 @@ class Movie
 
 $film1 = new Movie("Mezzogiorno di fuoco", "01:25:00");
 $film1->author = "Fred Zinnemann";
-$film1->genre = "Western";
+$film1->genre = array("Western");
 $film1->actor = array("Gary Cooper", "Grace Kelly", "Katy Jurado", "Lee Van Cleef");
 $film1->releaseYear = 1952;
 
@@ -64,11 +64,12 @@ $film2->releaseYear = 2001;
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Regista: <?php echo $film1->author ?></li>
-                    <li class="list-group-item">Genere/i: <?php echo json_encode($film1->genre); ?>
-
+                    <li class="list-group-item">Genere/i: <?php foreach ($film1->genre as $type) {
+                                                                echo $type . ' - ';
+                                                            }  ?>
                     </li>
                     <li class="list-group-item">Attori: <?php foreach ($film1->actor as $value) {
-                                                            echo $value . ' ,';
+                                                            echo $value . ' - ';
                                                         } ?></li>
                     <li class="list-group-item">Prima volta in sala <?php echo $film1->howOld() ?> anni fa'</li>
                 </ul>
@@ -80,10 +81,10 @@ $film2->releaseYear = 2001;
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Regista: <?php echo $film2->author ?></li>
                     <li class="list-group-item">Genere/i: <?php foreach ($film2->genre as $generi) {
-                                                                echo $generi . ' ,';
+                                                                echo $generi . ' - ';
                                                             }  ?> </li>
                     <li class="list-group-item">Attori: <?php foreach ($film2->actor as $actors) {
-                                                            echo $actors . ' ,';
+                                                            echo $actors . ' - ';
                                                         } ?></li>
                     <li class="list-group-item">Prima volta in sala <?php echo $film2->howOld() ?> anni fa'</li>
                 </ul>
