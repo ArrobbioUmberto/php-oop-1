@@ -8,7 +8,7 @@ class Movie
     public string $duration;
     public string $genre;
     public $actor;
-    public static $release;
+    public int $releaseYear;
 
 
     function __construct($_title, $_duration)
@@ -20,13 +20,25 @@ class Movie
     function howOld()
     {
         $currentYear = date("Y");
-        if (isset($this->release)) {
-            return $currentYear - $this->release;
+        if (isset($this->releaseYear)) {
+            return $currentYear - $this->releaseYear;
         }
     }
 }
 
 
+$film1 = new Movie("Mezzogiorno di fuoco", "01:25:00");
+$film1->author = "Fred Zinnemann";
+$film1->genre = "Western";
+$film1->actor = array("Gary Cooper", "Grace Kelly", "Katy Jurado", "Lee Van Cleef");
+$film1->releaseYear = 1952;
+
+
+$film2 = new Movie("Il Signore degli Anelli - La Compagnia dell'Anello", "02:58:00");
+$film2->author = "Peter Jackson";
+$film2->genre = "Fantasy";
+$film2->actor = array("Elijah Wood", "Ian McKellen", "Liv Tyler", "Viggo Mortensen");
+$film2->releaseYear = 2001;
 ?>
 
 
@@ -42,7 +54,22 @@ class Movie
 </head>
 
 <body>
-
+    <div>
+        <div>
+            <h1> Titolo: <?php echo $film1->title ?></h1>
+            <h2> Regista: <?php echo $film1->author ?></h2>
+            <span> Genere/i: <?php echo $film1->genre ?> </span>
+            <p> Attori: <?php echo $film1->actor[0] ?></p>
+            <h3>Prima volta in sala <?php echo $film1->howOld() ?> anni fa'</h3>
+        </div>
+        <div>
+            <h1> Titolo: <?php echo $film2->title ?></h1>
+            <h2> Regista: <?php echo $film2->author ?></h2>
+            <span> Genere/i: <?php echo $film2->genre ?> </span>
+            <p> Attori: <?php echo $film2->actor[0] ?></p>
+            <h3>Prima volta in sala <?php echo $film2->howOld() ?> anni fa'</h3>
+        </div>
+    </div>
 </body>
 
 </html>
