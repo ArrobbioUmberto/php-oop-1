@@ -50,26 +50,31 @@ $film2->releaseYear = 2001;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+
     <title>PHP-OOP-1</title>
 </head>
 
 <body>
-    <div>
-        <div>
-            <h1> Titolo: <?php echo $film1->title ?></h1>
-            <h2> Regista: <?php echo $film1->author ?></h2>
-            <span> Genere/i: <?php echo $film1->genre ?> </span>
-            <p> Attori: <?php echo $film1->actor[0] ?></p>
-            <h3>Prima volta in sala <?php echo $film1->howOld() ?> anni fa'</h3>
-        </div>
-        <div>
-            <h1> Titolo: <?php echo $film2->title ?></h1>
-            <h2> Regista: <?php echo $film2->author ?></h2>
-            <span> Genere/i: <?php echo $film2->genre ?> </span>
-            <p> Attori: <?php echo $film2->actor[0] ?></p>
-            <h3>Prima volta in sala <?php echo $film2->howOld() ?> anni fa'</h3>
+    <div class="container py-4">
+        <div class="row">
+            <div class="col py-2">
+                <h1> Titolo: <?php echo $film1->title ?></h1>
+                <h2> Regista: <?php echo $film1->author ?></h2>
+                <span> Genere/i: <?php echo $film1->genre ?> </span>
+                <p> Attori: <?php echo $film1->actor[0] ?></p>
+                <h3>Prima volta in sala <?php echo $film1->howOld() ?> anni fa'</h3>
+            </div>
+            <div class="col py-2">
+                <h1> Titolo: <?php echo $film2->title ?></h1>
+                <h2> Regista: <?php echo $film2->author ?></h2>
+                <span> Genere/i: <?php echo $film2->genre ?> </span>
+                <p> Attori: <?php echo $film2->actor[0] ?></p>
+                <h3>Prima volta in sala <?php echo $film2->howOld() ?> anni fa'</h3>
+            </div>
         </div>
     </div>
+
 </body>
 
 </html>
