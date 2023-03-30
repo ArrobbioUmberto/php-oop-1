@@ -8,12 +8,21 @@ class Movie
     public string $duration;
     public string $genre;
     public $actor;
+    public static $release;
 
 
     function __construct($_title, $_duration)
     {
         $this->title = $_title;
         $this->duration = $_duration;
+    }
+
+    function howOld()
+    {
+        $currentYear = date("Y");
+        if (isset($this->release)) {
+            return $currentYear - $this->release;
+        }
     }
 }
 
